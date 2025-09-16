@@ -98,6 +98,7 @@ img {
 body {
   font-family: var(--bs-body-font-family);
   font-size: 18px;
+  background-color: #00aced;
   margin: 0;
 }
 
