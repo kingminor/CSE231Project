@@ -98,7 +98,6 @@ img {
 body {
   font-family: var(--bs-body-font-family);
   font-size: 18px;
-  background-color: #00aced;
   margin: 0;
 }
 
@@ -171,4 +170,34 @@ a:hover {
 svg {
   background-color: var(--bs-black);
   fill: white;
+}
+
+
+.global-header{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.icon{
+  width: 50px;
+  height: 50px
+}
+
+.park-nav {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:10px;
+  text-align: center;
+  a{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    color: white;
+    text-decoration: none;
+    svg{
+      align-self: center;
+    }
+  }
 }
