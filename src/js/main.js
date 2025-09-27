@@ -1,7 +1,8 @@
 import { getParkData } from "./parkService.mjs";
 
 const parkData = getParkData();
-getHeaderInfo(parkData);
+setHeaderInfo(parkData);
+setMainInfo(parkData);
 
 function parkInfoTemplate(info) {
   return `<a href="/" class="hero-banner__title">${info.name}</a>
@@ -11,7 +12,12 @@ function parkInfoTemplate(info) {
   </p>`;
 }
 
-function getHeaderInfo(data){
+function parkMainIntroTemplate(info) {
+  return `<h1>${info.fullName}</h1>
+          <p>${info.description}</p>`
+}
+
+function setHeaderInfo(data){
   const disclaimer = document.querySelector(".disclaimer > a");
   disclaimer.href = data.url;
   disclaimer.innerHTML = data.fullName;
@@ -23,4 +29,11 @@ function getHeaderInfo(data){
 
   const heroBannerSubcontent = document.querySelector(".hero-banner-subcontent");
   heroBannerSubcontent.innerHTML = parkInfoTemplate(data);
+}
+
+function setMainInfo(data){
+  const introSection = document.querySelector(".intro");
+  const infoSection = document.querySelector(".info");
+
+  introSection.innerHTML = parkMainIntroTemplate(data);
 }
