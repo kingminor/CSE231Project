@@ -1,7 +1,7 @@
 import { getParkData } from "./parkService.mjs";
 
 const parkData = getParkData();
-getHeaderInfo();
+getHeaderInfo(parkData);
 
 function parkInfoTemplate(info) {
   return `<a href="/" class="hero-banner__title">${info.name}</a>
